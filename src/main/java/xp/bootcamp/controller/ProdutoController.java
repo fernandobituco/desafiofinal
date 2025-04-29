@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import xp.bootcamp.dto.ProductRegisterDto;
 import xp.bootcamp.model.Produto;
 import xp.bootcamp.service.ProdutoService;
 
@@ -46,8 +47,9 @@ public class ProdutoController {
     }
 
     @PostMapping
-    public void cadastrar(@RequestBody Produto produto) {
-        produtoService.salvar(produto);
+    public void cadastrar(@RequestBody ProductRegisterDto produto) {
+        Produto newProduto = new Produto(produto);
+        produtoService.salvar(newProduto);
     }
 
     @PutMapping

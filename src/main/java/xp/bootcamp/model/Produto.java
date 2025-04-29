@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import xp.bootcamp.dto.ProductRegisterDto;
 import xp.bootcamp.enums.Categoria;
 
 @Entity
@@ -26,4 +27,10 @@ public class Produto {
     private double preco;
 
     private Categoria categoria;
+
+    public Produto(ProductRegisterDto productRegisterDto) {
+        nome = productRegisterDto.getNome();
+        preco = productRegisterDto.getPreco();
+        categoria = productRegisterDto.getCategoria();
+    }
 }
