@@ -30,6 +30,10 @@ public class ProdutoService {
         return produtoRepository.save(produto);
     }
 
+    public Produto atualizar(Produto produto) {
+        return produtoRepository.save(produto);
+    }
+
     public void deletar(Long id) {
         produtoRepository.deleteById(id);
     }
